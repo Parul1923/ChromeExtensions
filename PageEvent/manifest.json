@@ -1,0 +1,32 @@
+{ 
+    "manifest_version":2,
+     "name":"PageFontStyle",
+     "description":"Changes Font Styles on specified pages",
+     "version":"1.0",
+     "icons":{
+         "128":"icons128.png",
+         "48":"icons48.png",
+         "16":"icons16.png"
+     },
+     "page_action":{
+          "default_icon":"icons16.png",
+          "default_popup":"popup.html",
+          "default_title":"PageFontStyle"
+     },
+     "background":{
+         "scripts":["eventPage.js"],
+          "persistent":false
+     },
+     "content_scripts":[
+         {
+             "matches":["https://developer.chrome.com/*"],
+             "js":["content.js"],
+             "css":["content.css"]
+         }
+     ],
+
+     "permissions":[
+           "tabs",
+           "https://developer.chrome.com/*"
+     ]
+}
